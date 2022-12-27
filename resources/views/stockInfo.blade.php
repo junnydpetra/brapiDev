@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Detalhes de Ações')
+@section('title', 'Detalhes de Ação')
 
 @section('content')
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -26,7 +26,7 @@
             @endforeach
         </table>
 
-        <a href="{{ url()->previous() }}">
+        <a href="#">
             <button class="btn btn-outline-primary float-start">Comprar</button>
         </a>
 
