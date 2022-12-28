@@ -11,8 +11,9 @@ class DashboardController extends Controller
     {
         $base_url = Http::get('https://brapi.dev/api/available');
         $apiArray = json_decode($base_url->body());
-        //dd($apiArray);
+
         return view('dashboard', ['apiArray' => $apiArray->stocks]);
     }
+
 
 }
