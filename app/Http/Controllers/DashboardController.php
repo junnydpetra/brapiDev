@@ -15,5 +15,12 @@ class DashboardController extends Controller
         return view('dashboard', ['apiArray' => $apiArray->stocks]);
     }
 
+    // public function stockInfo($api)
+    // {
+    //     $base_url = Http::get("https://brapi.dev/api/quote/{$api}");
+    //     $apiArray = json_decode($base_url->body());
+
+    //     return view('stockInfo', ['apiArray' => $apiArray->results]);
+    // }
 
 }

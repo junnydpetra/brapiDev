@@ -21,6 +21,7 @@
 
                             @foreach ($apiArray as $api)
                                 <tr>
+                                    {{-- <td><a href="{{ route('stockInfo', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td> --}}
                                     <td><a href="{{ route('stockInfo', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td>
                                 <td>
                                     <!-- Button trigger modal -->
@@ -34,12 +35,27 @@
                                         <div class="modal-dialog modal-fullscreen-xl-down" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Modal</h4>
+                                                    <h4 class="modal-title" id="myModalLabel">Últimos Relatórios</h4>
                                                 </div>
-                                                <div class="modal-body">
-                                                    Teste!
-                                                </div>
+
+                                                @php
+                                                    $base_url = Http::get("https://brapi.dev/api/quote/petr4");
+                                                    $apiArray = json_decode($base_url->body());
+
+                                                    $api = $apiArray->results;
+                                                @endphp
+
+                                                @foreach ($apiArray as $api)
+                                                    <div class="modal-body">
+                                                        <b>AÇÃO:</b> {{ $api->symbol }}<br>
+                                                        <b>SHORT NAME:</b> {{ $api->shortName }}<br>
+                                                        <b>EMPRESA:</b> {{ $api->longName }}<br>
+                                                        <b>VALOR REGULAR DE MERCADO:</b> {{ $api->regularMarketPrice }}<br>
+                                                        <b>VALOR MAIS ALTO:</b> {{ $api->regularMarketDayHigh }}<br>
+                                                        <b>VALOR MAIS BAIXO:</b> {{ $api->regularMarketDayRange }}<br>
+                                                    </div>
+                                                @endforeach
+
                                                 <div class="modal-footer">
                                                     <a><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></a>
                                                     <button type="button" class="btn btn-primary">Save changes</button>
@@ -49,7 +65,7 @@
                                     </div>
 
 
-                                @endforeach
+                            @endforeach
                         </table>
                     </div>
                     <div class="col-lg"></div>
