@@ -16,14 +16,12 @@
                     <div class="col-lg"></div>
                     <div class="col-lg">
                         <table class="table table-success text-center table-bordered">
-                            <th class="">AÇÃO</th>
-                            {{-- <th class="">Logo</th> --}}
 
                             @foreach ($apiArray as $api)
                                 <tr>
-                                    <td class="card">
+                                    <td class="card mb-2">
+                                        <img src="{{ $api->logo }}" class="img-thumbnail mb-1">
                                         <button type="button" href="{{ route('stockInfoModal', $api->stock) }}" class="btn btn-success btn-sm btn-modal" data-bs-toggle="modal" data-bs-target="#myModal">{{ $api->stock }}</button>
-                                        <img src="{{ $api->logo }}" alt="">
                                     </td>
                                 </tr>
 
