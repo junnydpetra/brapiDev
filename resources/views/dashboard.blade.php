@@ -17,23 +17,22 @@
                     <div class="col-lg">
                         <table class="table table-success text-center table-bordered">
                             <th class="">AÇÃO</th>
-                            <th class="">MODAL</th>
+                            {{-- <th class="">Logo</th> --}}
 
                             @foreach ($apiArray as $api)
                                 <tr>
-                                    {{-- <td><a href="{{ route('stockInfo', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td> --}}
-                                    <td><a href="{{ route('stockInfoModal', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td>
-                                <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" href="{{ route('stockInfoModal', $api) }}" class="btn btn-primary btn-sm btn-lg btn-modal" data-bs-toggle="modal" data-bs-target="#myModal">
-                                        Modal
-                                    </button></td>
+                                    <td class="card">
+                                        <button type="button" href="{{ route('stockInfoModal', $api->stock) }}" class="btn btn-success btn-sm btn-modal" data-bs-toggle="modal" data-bs-target="#myModal">{{ $api->stock }}</button>
+                                        <img src="{{ $api->logo }}" alt="">
+                                    </td>
                                 </tr>
 
+                                {{-- <tr><img src="" alt=""></tr> --}}
+
                                     <!-- Modal -->
-                                    <div class="modal fade .bg-warning.bg-gradient" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                         <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
+                                            <div class="modal-content bg-success bg-success p-2 text-white bg-opacity-25 bg-gradient">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title" id="myModalLabel">Últimos Relatórios</h4>
                                                 </div>
