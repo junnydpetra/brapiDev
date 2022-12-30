@@ -22,42 +22,28 @@
                             @foreach ($apiArray as $api)
                                 <tr>
                                     {{-- <td><a href="{{ route('stockInfo', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td> --}}
-                                    <td><a href="{{ route('stockInfo', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td>
+                                    <td><a href="{{ route('stockInfoModal', $api) }}"><button class="btn btn-success btn-sm">{{ $api }}</button></a></td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-sm btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    <button type="button" href="{{ route('stockInfoModal', $api) }}" class="btn btn-primary btn-sm btn-lg btn-modal" data-bs-toggle="modal" data-bs-target="#myModal">
                                         Modal
                                     </button></td>
                                 </tr>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog modal-fullscreen-xl-down" role="document">
+                                    <div class="modal fade .bg-warning.bg-gradient" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title" id="myModalLabel">Últimos Relatórios</h4>
                                                 </div>
 
-                                                @php
-                                                    $base_url = Http::get("https://brapi.dev/api/quote/petr4");
-                                                    $apiArray = json_decode($base_url->body());
+                                                <div class="modal-body" id="modal-body-stock">
 
-                                                    $api = $apiArray->results;
-                                                @endphp
-
-                                                @foreach ($apiArray as $api)
-                                                    <div class="modal-body">
-                                                        <b>AÇÃO:</b> {{ $api->symbol }}<br>
-                                                        <b>SHORT NAME:</b> {{ $api->shortName }}<br>
-                                                        <b>EMPRESA:</b> {{ $api->longName }}<br>
-                                                        <b>VALOR REGULAR DE MERCADO:</b> {{ $api->regularMarketPrice }}<br>
-                                                        <b>VALOR MAIS ALTO:</b> {{ $api->regularMarketDayHigh }}<br>
-                                                        <b>VALOR MAIS BAIXO:</b> {{ $api->regularMarketDayRange }}<br>
-                                                    </div>
-                                                @endforeach
+                                                </div>
 
                                                 <div class="modal-footer">
-                                                    <a><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></a>
+                                                    <a><button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button></a>
                                                     <button type="button" class="btn btn-primary">Save changes</button>
                                                 </div>
                                             </div>
@@ -76,3 +62,17 @@
     </main>
 
     @endsection
+
+    @push('scripts')
+        <script>
+            $(function(){
+                $('.btn-modal').on('click', function() {
+                    let url = $(this).attr('href');
+
+                    $.get(url, function(data) {
+                        $('#modal-body-stock').html(data)
+                    })
+                })
+            })
+        </script>
+    @endpush

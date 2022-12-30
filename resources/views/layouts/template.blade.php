@@ -1,4 +1,4 @@
-<@php
+@php
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Http;
 @endphp
@@ -38,5 +38,9 @@
                 @yield('content')
             </div>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        @stack('scripts')
     </body>
 </html>
