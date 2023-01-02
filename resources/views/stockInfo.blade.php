@@ -27,13 +27,5 @@
             @endforeach
         </table>
 
-        <a href="#">
-            <button class="btn btn-outline-primary float-start">Comprar</button>
-        </a>
-
-        <a href="{{ url()->previous() }}">
-            <button class="btn btn-outline-success float-end">Voltar</button>
-        </a>
-
     </main>
 @endsection

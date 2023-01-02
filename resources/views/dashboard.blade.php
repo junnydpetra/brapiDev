@@ -4,6 +4,19 @@
 
 @section('content')
 
+    <style>
+        .botao
+        {
+            color: #fff;
+        }
+
+        .botao:hover
+        {
+            color: #fff;
+        }
+
+    </style>
+
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom border-dark">
             <h2>Ações Em Alta</h2>
@@ -40,8 +53,9 @@
 
                                         </div>
 
-                                        <div class="modal-footer float-end">
-                                            <a><button type="button" class="btn btn-outline-warning text-dark" data-bs-dismiss="modal">Fechar</button></a>
+                                        <div class="modal-footer d-inline">
+                                            <a><button type="button" class="float-start btn btn-outline-primary text-dark text-light" id="" data-bs-dismiss="modal">Comprar</button></a>
+                                            <a><button type="button" class="float-end btn btn-outline-danger text-dark" data-bs-dismiss="modal">Fechar</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +66,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </main>
 
