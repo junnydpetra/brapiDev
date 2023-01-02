@@ -15,11 +15,16 @@
 
                     @foreach ($apiArray as $api)
 
-                                <div class="d-inline-flex p-2 card d-flex justify-content-center border border-dark mb-1 bg-light"
-                                style="width: 200px; margin: 25px 15px;">
-                                    <img src="{{ $api->logo }}" class="card-img-top img-fluid mb-1 border-bottom border-dark">
+                                <div class="d-inline-flex p-2 card d-flex justify-content-center border border-dark mb-1"
+                                style="width: 200px; margin: 25px 15px; background-color: #F5FFFA;">
+                                    <img src="{{ $api->logo }}" class="card-img-top img-fluid mb-1 border border-dark">
                                     <div class="card-body text-center">
-                                        <button type="button" href="{{ route('stockInfoModal', $api->stock) }}" class="btn btn-outline-warning border border-dark btn-sm btn-modal text-dark" data-bs-toggle="modal" data-bs-target="#myModal">{{ $api->stock }}</button>
+                                        <p class="small">{{ $api->name }}</p>
+
+                                        <button type="button" href="{{ route('stockInfoModal', $api->stock) }}"
+                                            class="btn btn-outline-warning border border-dark btn-sm btn-modal text-dark" data-bs-toggle="modal"
+                                            data-bs-target="#myModal">{{ $api->stock }}
+                                        </button>
                                     </div>
                                 </div>
 
@@ -35,9 +40,8 @@
 
                                         </div>
 
-                                        <div class="modal-footer">
-                                            <a><button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button></a>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        <div class="modal-footer float-end">
+                                            <a><button type="button" class="btn btn-outline-warning text-dark" data-bs-dismiss="modal">Fechar</button></a>
                                         </div>
                                     </div>
                                 </div>
