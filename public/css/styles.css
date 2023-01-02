@@ -1,0 +1,18 @@
+.spacing_cards
+{
+    margin-left: 40px;
+}
+
+.margin_container
+{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.cards_size
+{
+    width: 200px;
+    margin: 25px 15px;
+    background-color: #F5FFFA;
+}
+
