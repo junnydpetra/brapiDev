@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCarteiraModelsTable extends Migration
+class CreateOperacoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateCarteiraModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carteira_models', function (Blueprint $table) {
+        Schema::create('operacoes', function (Blueprint $table)
+        {
             $table->id();
+            $table->integer('operacao');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateCarteiraModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carteira_models');
+        Schema::dropIfExists('operacoes');
     }
 }

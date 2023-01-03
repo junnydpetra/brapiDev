@@ -13,7 +13,11 @@
             <div class="row spacing_cards">
                 <div class="col-md margin_container">
 
-                    <input type="text" name="search" id="search_input" class="form-control" placeholder="Busque uma ação">
+                    <form action="{{ route('dashboard') }}" method="get">
+                        <input type="text" name="search" id="search_input" class="form-control" placeholder="Busque uma ação">
+                        {{-- <button type="submit">Buscar</button> --}}
+                    </form>
+
                     <hr>
 
                     @foreach ($apiArray as $api)

@@ -19,7 +19,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
         <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css\styles.css">
 
         <title>@yield('title', 'BrapiDev')</title>
 
@@ -53,6 +53,7 @@
                 $('#myTable').DataTable();
             });
         </script>
+        <script src="resources/js/app.js"></script>
         @stack('scripts')
     </body>
 </html>

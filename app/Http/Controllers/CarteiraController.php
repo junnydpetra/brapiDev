@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\Carteira;
 
 class CarteiraController extends Controller
 {
     public function carteira()
     {
-        $base_url = Http::get('https://brapi.dev/api/quote/list');
-        return view('carteira');
+        $carteira = Carteira::all();
+        return view('carteira', ['carteira' => $carteira[0]]);
     }
 }
