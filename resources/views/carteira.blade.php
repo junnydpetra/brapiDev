@@ -11,7 +11,7 @@
             <div class="card-body text-center">
               <h4 class="card-title"><b>Seu Saldo</b>: R${{ number_format($carteira->saldo, 2, '.', ',') }}</h4>
               <p class="card-text"></p>
-              <a href="#" class="btn btn-sm border border-dark btn-outline-dark">Extrato</a>
+              <a href="{{ route('extrato') }}" class="btn btn-sm border border-dark btn-outline-dark">Extrato</a>
               <a href="#" class="btn btn-sm border border-dark btn-success">Depósito</a>
               <a href="#" class="btn btn-sm border border-dark btn-primary ">Saque</a>
             </div>

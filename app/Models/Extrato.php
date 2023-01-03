@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Extrato extends Model
 {
-    use HasFactory;
+
 }
