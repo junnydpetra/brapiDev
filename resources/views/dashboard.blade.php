@@ -50,9 +50,9 @@
                                 </div>
 
                                 <div class="modal-footer d-inline">
-                                    <a><button type="button" class="float-start btn btn-outline-primary text-dark text-light"
+                                    <a><button type="button" class="float-start btn btn-primary border border-dark text-light"
                                         id="" data-bs-dismiss="modal">Comprar</button></a>
-                                    <a><button type="button" class="float-end btn btn-outline-danger text-dark"
+                                    <a><button type="button" class="float-end btn btn-danger border border-dark text-light"
                                         data-bs-dismiss="modal">Fechar</button></a>
                                 </div>
                             </div>
