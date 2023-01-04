@@ -5,7 +5,8 @@
 @section('content')
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom border-dark">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center
+                    pb-2 mb-3 border-bottom border-dark flex-md-nowrap p-0">
             <h2>Ações Em Alta</h2>
         </div>
 
@@ -15,17 +16,17 @@
 
                     <form action="{{ route('dashboard') }}" method="get">
                         <input type="text" name="search" id="search_input" class="form-control" placeholder="Busque uma ação">
-                        {{-- <button type="submit">Buscar</button> --}}
                     </form>
 
-                    <hr>
+                    {{-- <hr> --}}
 
                     @foreach ($apiArray as $api)
 
                         <div class="d-inline-flex p-2 card d-flex justify-content-center border border-dark mb-1 cards_size card-acao">
                             <img src="{{ $api->logo }}" class="card-img-top img-fluid mb-1 border border-dark">
                             <div class="card-body text-center">
-                                <p class="small nome-acao">{{ $api->name }}</p>
+                                <div class="text-success"><b>{{ $api->name }}</b></div>
+                                <p class="small nome-acao"><b>R${{ number_format($api->close, 2, '.', ',') }}</b></p>
 
                                 <button type="button" href="{{ route('stockInfoModal', $api->stock) }}"
                                     class="btn btn-outline-warning border border-dark btn-sm btn-modal text-dark"
@@ -50,9 +51,9 @@
                                 </div>
 
                                 <div class="modal-footer d-inline">
-                                    <a><button type="button" class="float-start btn btn-primary border border-dark text-light"
+                                    <a><button type="button" class="float-start btn btn-outline-success border border-dark text-dark"
                                         id="" data-bs-dismiss="modal">Comprar</button></a>
-                                    <a><button type="button" class="float-end btn btn-danger border border-dark text-light"
+                                    <a><button type="button" class="float-end btn btn-outline-danger border border-dark text-dark"
                                         data-bs-dismiss="modal">Fechar</button></a>
                                 </div>
                             </div>

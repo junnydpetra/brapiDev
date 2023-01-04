@@ -20,3 +20,8 @@
 {
     width: 29%;
 }
+
+.side_nav
+{
+    position: fixed;
+}
