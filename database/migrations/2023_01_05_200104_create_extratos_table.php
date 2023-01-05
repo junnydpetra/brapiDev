@@ -16,8 +16,11 @@ class CreateExtratosTable extends Migration
         Schema::create('extratos', function (Blueprint $table)
         {
             $table->id();
-            $table->foreign('operacao')->references('id')->on('operacoes');
+            $table->integer('operacao');
+            $table->unsignedBigInteger('operacao_id');
             $table->timestamps();
+
+            $table->foreign('operacao_id')->references('id')->on('operacoes')->onDelete('cascade');
         });
     }
 

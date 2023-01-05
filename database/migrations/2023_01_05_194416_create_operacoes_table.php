@@ -16,7 +16,7 @@ class CreateOperacoesTable extends Migration
         Schema::create('operacoes', function (Blueprint $table)
         {
             $table->id();
-            $table->integer('operacao');
+            $table->integer('operacoes');
             $table->timestamps();
         });
     }
