@@ -72,18 +72,18 @@
         $(function(){
             const cardAcoes = $('.card-acao');
 
-            $('#search_input').on('keyup', function() {
-                let searchValue = $(this).val();
-                cardAcoes.each(function(index, card) {
-                    if($(card).find('.nome-acao').text() == searchValue) {
+            /* $('#search_input').on('keyup', function() {
+                 let searchValue = $(this).val();
+                 cardAcoes.each((index, card) => {
+                     if($(card).find('.nome-acao').text() == searchValue) {
 
-                        $(cardAcoes[index]).show();
-                    } else {
-                        console.log('esconder cartao')
-                        $(cardAcoes[index]).hide();
-                    }
-                });
-            })
+                         $(cardAcoes[index]).show();
+                     } else {
+                         console.log('esconder cartao')
+                         $(cardAcoes[index]).hide();
+                     }
+                 });
+             }) */
 
             $('.btn-modal').on('click', function() {
                 let url = $(this).attr('href');

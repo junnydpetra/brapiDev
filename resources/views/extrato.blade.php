@@ -1,10 +1,5 @@
-@extends('layouts.template')
 
-@section('title', 'Extratos')
-
-@section('content')
-
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <main role="main" class="container pt-3 px-4">
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center
                     border-bottom border-dark flex-md-nowrap">
@@ -57,10 +52,3 @@
             <p>Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! Teste! </p>
         </div>
     </main>
-
-@endsection
-
-@push('scripts')
-    <script></script>
-@endpush
-
