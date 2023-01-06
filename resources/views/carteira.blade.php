@@ -30,9 +30,9 @@
                         border-bottom border-dark flex-md-nowrap">
                         <h2 id="modal-title"></h2>
                         <div class="float-end">
-                            <a href="{{ route('extrato') }}" data-title="Extrato" class="btn-dentro-modal btn btn-sm border border-dark btn-warning">Extrato</a>
-                            <a href="{{ route('deposito') }}" data-title="Depósito" class="btn-dentro-modal btn btn-sm border border-dark btn-primary">Depósito</a>
-                            <a href="{{ route('saque') }}" data-title="Saque" class="btn-dentro-modal btn btn-sm border border-dark btn-success">Saque</a>
+                            <a href="{{ route('extrato') }}" data-title="Extrato" class="btn-relatorio btn-dentro-modal btn btn-sm border border-dark btn-warning">Extrato</a>
+                            <a href="{{ route('deposito') }}" data-title="Depósito" class="btn-relatorio btn-dentro-modal btn btn-sm border border-dark btn-primary">Depósito</a>
+                            <a href="{{ route('saque') }}" data-title="Saque" class="btn-relatorio btn-dentro-modal btn btn-sm border border-dark btn-success">Saque</a>
                             <a href="{{ route('carteira') }}" class="btn btn-sm border border-dark btn-danger">Fechar</a>
                         </div>
                     </div>
