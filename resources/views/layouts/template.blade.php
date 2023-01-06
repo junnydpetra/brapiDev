@@ -3,7 +3,6 @@
     use Illuminate\Support\Facades\Http;
 @endphp
 
-
 <!doctype html>
 <html lang="en">
     <head>
